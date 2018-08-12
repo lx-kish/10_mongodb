@@ -13,7 +13,7 @@ const url = 'mongodb://localhost:27017/test';
 // MongoClient.connect(url, (err, db) => {
 
 //     const cars = [
-//         {model:"Chevy",year:"2017"},
+//         {model:"Ferrari",year:"2002"},
 //         {model:"Volkswagen",year:"2009"}
 //     ];
 
@@ -46,9 +46,55 @@ const url = 'mongodb://localhost:27017/test';
 //     db.close();
 // })
 
+// MongoClient.connect(url, (err, db) => {
+//     db.collection('Cars').findOne({year:'2009'}, {model:0, year:0}, (err, doc) => {
+//         console.log(doc)
+//     });
+//     db.close();
+// })
+
+// MongoClient.connect(url, (err, db) => {
+//     db.collection('Cars').deleteMany({year:'2009'}, (err, doc) => {
+//         console.log(doc)
+//     });
+//     db.close();
+// })
+
+// MongoClient.connect(url, (err, db) => {
+//     db.collection('Cars').deleteOne({model:'Ferrari'}, (err, doc) => {
+//         console.log(doc)
+//     });
+//     db.close();
+// })
+
+// MongoClient.connect(url, (err, db) => {
+//     db.collection('Cars').findOneAndDelete({model:'Renault'}, (err, doc) => {
+//         console.log(doc)
+//     });
+//     db.close();
+// })
+
 MongoClient.connect(url, (err, db) => {
-    db.collection('Cars').findOne({year:'2009'}, {model:0, year:0}, (err, doc) => {
-        console.log(doc)
-    });
+    db.collection('Cars').findOneAndUpdate(
+        {
+            name:"Alex"
+        },
+        {
+            $set:{
+                lastname:"Skywalker"
+            },
+            $inc:{
+                age:+2
+            }
+        },
+        {
+            upsert:true,
+            returnOriginal:true
+        },
+        (err, doc) => {
+            console.log(doc)
+        }
+    );
+
     db.close();
 })
