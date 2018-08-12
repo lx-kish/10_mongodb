@@ -1,0 +1,22 @@
+{
+  "name": "10_mongodb",
+  "version": "1.0.0",
+  "description": "\"# 10_mongodb\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lx-kish/10_mongodb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lx-kish/10_mongodb/issues"
+  },
+  "homepage": "https://github.com/lx-kish/10_mongodb#readme",
+  "dependencies": {
+    "mongodb": "^2.2.31"
+  }
+}
