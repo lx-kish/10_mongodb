@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lx-kish/10_mongodb#readme",
   "dependencies": {
+    "express": "^4.16.3",
     "mongodb": "^2.2.31",
     "mongoose": "^4.10.8"
   }
